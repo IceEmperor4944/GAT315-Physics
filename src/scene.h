@@ -23,8 +23,13 @@ public:
 	void SetCamera(SceneCamera* camera) { m_camera = camera; }
 	SceneCamera* GetCamera() { return m_camera; }
 
+	friend struct Body;
+
 protected:
 	void DrawGrid(float slices, float thickness, const Color& color);
+	void DrawText(const std::string& text, const Vector2& world, int fontSize, const Color& color) const;
+	void DrawCircle(const Vector2& world, float radius, const Color& color) const;
+	void DrawLine(const Vector2& v1, const Vector2& v2, float thickness, const Color& color) const;
 
 protected:
 	int m_width{ 0 };

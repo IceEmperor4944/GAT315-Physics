@@ -8,6 +8,8 @@ by Jeffery Myers is marked with CC0 1.0. To view a copy of this license, visit h
 */
 
 #include "trigonometry_scene.h"
+#include "vector_scene.h"
+#include "polar_scene.h"
 #include "raylib.h"
 #include "resource_dir.h"	// utility header for SearchAndSetResourceDir
 
@@ -25,7 +27,7 @@ int main ()
 	// Load a texture from the resources directory
 	Texture wabbit = LoadTexture("wabbit_alpha.png");
 
-	auto* scene = new TrigonometryScene("trigonometry", 1280, 720);
+	Scene* scene = new PolarScene("polar", 1280, 720);
 	scene->Initialize();
 	
 	// game loop
