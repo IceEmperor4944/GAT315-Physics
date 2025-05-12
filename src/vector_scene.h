@@ -1,6 +1,10 @@
 #pragma once
 #include "scene.h"
 
+//#define TYPE1
+//#define TYPE2
+#define TYPE3
+
 struct Body;
 
 class VectorScene : public Scene {

@@ -27,7 +27,7 @@ int main ()
 	// Load a texture from the resources directory
 	Texture wabbit = LoadTexture("wabbit_alpha.png");
 
-	Scene* scene = new PolarScene("polar", 1280, 720);
+	Scene* scene = new VectorScene("vector", 1280, 720);
 	scene->Initialize();
 	
 	// game loop

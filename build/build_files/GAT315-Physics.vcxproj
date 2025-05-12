@@ -537,6 +537,7 @@
     <ClInclude Include="..\..\src\scene_camera.h" />
     <ClInclude Include="..\..\src\trigonometry_scene.h" />
     <ClInclude Include="..\..\src\vector_scene.h" />
+    <ClInclude Include="..\..\src\world.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\body.cpp" />
@@ -546,6 +547,7 @@
     <ClCompile Include="..\..\src\scene_camera.cpp" />
     <ClCompile Include="..\..\src\trigonometry_scene.cpp" />
     <ClCompile Include="..\..\src\vector_scene.cpp" />
+    <ClCompile Include="..\..\src\world.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="raylib.vcxproj">
