@@ -1,0 +1,13 @@
+#
+# rgl layout text file (v4.0) - raygui layout file generated using rGuiLayout
+#
+# Number of controls:     2
+#
+# Ref. window:    r <x> <y> <width> <height>
+# Anchor info:    a <id> <name> <posx> <posy> <enabled>
+# Control info:   c <id> <type> <name> <rectangle> <anchor_id> <text>
+#
+r 0 40 -1 -1
+a 001 anchor01 88 80 1
+c 000 0 PhysicsWindowBox 0 0 264 488 1 PHYSICS
+c 001 16 GravitySlider 72 48 120 16 1 GRAVITY

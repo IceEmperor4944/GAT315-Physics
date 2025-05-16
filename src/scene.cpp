@@ -18,6 +18,7 @@ void Scene::BeginDraw()
 {
 	BeginDrawing();
 	ClearBackground(m_background);
+	DrawFPS(20, 20);
 }
 
 void Scene::EndDraw()

@@ -530,9 +530,12 @@
   <ItemGroup>
     <ClInclude Include="..\..\include\resource_dir.h" />
     <ClInclude Include="..\..\src\body.h" />
+    <ClInclude Include="..\..\src\gravitation.h" />
+    <ClInclude Include="..\..\src\integrator.h" />
     <ClInclude Include="..\..\src\polar.h" />
     <ClInclude Include="..\..\src\math_util.h" />
     <ClInclude Include="..\..\src\polar_scene.h" />
+    <ClInclude Include="..\..\src\raygui.h" />
     <ClInclude Include="..\..\src\scene.h" />
     <ClInclude Include="..\..\src\scene_camera.h" />
     <ClInclude Include="..\..\src\trigonometry_scene.h" />
@@ -541,6 +544,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\body.cpp" />
+    <ClCompile Include="..\..\src\gravitation.cpp" />
+    <ClCompile Include="..\..\src\gui.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\polar_scene.cpp" />
     <ClCompile Include="..\..\src\scene.cpp" />

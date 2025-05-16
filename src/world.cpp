@@ -22,6 +22,7 @@ Body* World::CreateBody(const Vector2& position, float size, const Color& color)
 void World::Step(float timestep) {
     for (auto body : m_bodies) {
         body->Step(timestep);
+        body->ClearForce();
     }
 }
 

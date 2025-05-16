@@ -13,7 +13,7 @@ by Jeffery Myers is marked with CC0 1.0. To view a copy of this license, visit h
 #include "raylib.h"
 #include "resource_dir.h"	// utility header for SearchAndSetResourceDir
 
-int main ()
+int main()
 {
 	// Tell the window to use vsync and work on high DPI displays
 	SetConfigFlags(FLAG_VSYNC_HINT | FLAG_WINDOW_HIGHDPI);
@@ -29,13 +29,22 @@ int main ()
 
 	Scene* scene = new VectorScene("vector", 1280, 720);
 	scene->Initialize();
-	
+
+	SetTargetFPS(180);
+
+	float timeAccum = 0;
 	// game loop
 	while (!WindowShouldClose())		// run the loop untill the user presses ESCAPE or presses the Close button on the window
 	{
 		scene->Update();
+		timeAccum += GetFrameTime();
+		while (timeAccum >= Scene::fixedTimestep) {
+			scene->FixedUpdate();
+			timeAccum -= Scene::fixedTimestep;
+		}
 		scene->BeginDraw();
 		scene->Draw();
+		scene->DrawGUI();
 		scene->EndDraw();
 	}
 

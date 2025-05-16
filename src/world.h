@@ -1,8 +1,9 @@
 #pragma once
+#include "body.h"
 #include "raylib.h"
 #include<vector>
 
-struct Body;
+using bodies_t = std::vector<Body*>;
 
 class World {
 public: 
@@ -16,7 +17,9 @@ public:
 
 	void DestroyAll();
 
+	bodies_t& GetBodies() { return m_bodies; }
+
 	static Vector2 gravity;
 private:
-	std::vector<Body*> m_bodies;
+	bodies_t m_bodies;
 };

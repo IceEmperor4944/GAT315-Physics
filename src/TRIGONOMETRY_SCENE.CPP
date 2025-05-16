@@ -8,6 +8,11 @@ void TrigonometryScene::Update() {
 
 }
 
+void TrigonometryScene::FixedUpdate()
+{
+
+}
+
 //this and next are also in raylib, so not necessary if include raymath.h
 float Vector2Length(const Vector2& v) {
 	return sqrtf((v.x * v.x) + (v.y * v.y));
