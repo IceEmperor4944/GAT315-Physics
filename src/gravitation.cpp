@@ -24,7 +24,7 @@ void ApplyGravitation(bodies_t& bodies, float strength)
 			Vector2 forceVector = Vector2Normalize(direction) * forceMagnitude;
 
 			//STEP 6: Apply the force to both bodies (equal and opposite)
-			bodyA->ApplyForce(Vector2Scale(forceVector, -1));
+			bodyA->ApplyForce(Vector2Negate(forceVector));
 			bodyB->ApplyForce(forceVector);
 		}
 	}

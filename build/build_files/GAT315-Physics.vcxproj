@@ -531,6 +531,7 @@
     <ClInclude Include="..\..\include\resource_dir.h" />
     <ClInclude Include="..\..\src\body.h" />
     <ClInclude Include="..\..\src\gravitation.h" />
+    <ClInclude Include="..\..\src\gui.h" />
     <ClInclude Include="..\..\src\integrator.h" />
     <ClInclude Include="..\..\src\polar.h" />
     <ClInclude Include="..\..\src\math_util.h" />
@@ -538,6 +539,9 @@
     <ClInclude Include="..\..\src\raygui.h" />
     <ClInclude Include="..\..\src\scene.h" />
     <ClInclude Include="..\..\src\scene_camera.h" />
+    <ClInclude Include="..\..\src\scene_types.h" />
+    <ClInclude Include="..\..\src\spring.h" />
+    <ClInclude Include="..\..\src\spring_scene.h" />
     <ClInclude Include="..\..\src\trigonometry_scene.h" />
     <ClInclude Include="..\..\src\vector_scene.h" />
     <ClInclude Include="..\..\src\world.h" />
@@ -550,6 +554,8 @@
     <ClCompile Include="..\..\src\polar_scene.cpp" />
     <ClCompile Include="..\..\src\scene.cpp" />
     <ClCompile Include="..\..\src\scene_camera.cpp" />
+    <ClCompile Include="..\..\src\spring.cpp" />
+    <ClCompile Include="..\..\src\spring_scene.cpp" />
     <ClCompile Include="..\..\src\trigonometry_scene.cpp" />
     <ClCompile Include="..\..\src\vector_scene.cpp" />
     <ClCompile Include="..\..\src\world.cpp" />

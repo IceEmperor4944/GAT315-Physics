@@ -3,8 +3,7 @@
 #include "scene_camera.h"
 #include <string>
 
-class Scene
-{
+class Scene {
 public:
 	Scene(const std::string& title, int width, int height, const Color& background = BLACK);
 	virtual ~Scene();
@@ -26,10 +25,12 @@ public:
 	static constexpr float fixedTimestep = 1.0f / 60.0f;
 
 	friend struct Body;
+	friend struct Spring;
 protected:
 	void DrawGrid(float slices, float thickness, const Color& color);
 	void DrawText(const std::string& text, const Vector2& world, int fontSize, const Color& color) const;
 	void DrawCircle(const Vector2& world, float radius, const Color& color) const;
+	void DrawCircleLine(const Vector2& world, float radius, const Color& color, int pixels = 0) const;
 	void DrawLine(const Vector2& v1, const Vector2& v2, float thickness, const Color& color) const;
 protected:
 	int m_width{ 0 };

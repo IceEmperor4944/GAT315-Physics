@@ -5,31 +5,33 @@
 struct Body {
 public:
 	enum class Type {
-		Static,
+		Dynamic,
 		Kinematic,
-		Dynamic
+		Static
 	};
 public:
 	Body() = default;
-	Body(const Vector2& position, const Vector2& velocity, float size, const Color& color) :
+	Body(const Vector2& position, const Vector2& velocity, float mass, float size, const Color& color) :
 		position{ position },
 		velocity{ velocity },
+		mass{ mass },
 		size{ size },
 		color{ color }
 	{
 	}
 
-	Body(const Vector2& position, float size, const Color& color) :
+	Body(const Vector2& position, float mass, float size, const Color& color) :
 		position{ position },
+		mass{ mass },
 		size{ size },
 		color{ color }
 	{
 	}
 
 	Body(Type type, const Vector2& position, float mass, float size, const Color& color) :
-		type{type},
+		type{ type },
 		position{ position },
-		mass{mass},
+		mass{ mass },
 		size{ size },
 		color{ color }
 	{

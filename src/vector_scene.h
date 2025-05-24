@@ -20,18 +20,4 @@ public:
 	void Draw() override;
 	void DrawGUI() override;
 private:
-	bool mouseOverGUI = false;
-
-	Vector2 anchor01 = { 64, 64 };
-	Vector2 anchor02 = { 112, 104 };
-
-	bool physicsWindowBoxActive = true;
-
-	float massSliderBarValue = 1.0f;
-	float sizeSliderBarValue = 0.1f;
-	float gravityScaleSliderBarValue = 1.0f;
-	float dampingSliderBarValue = 0.0f;
-	float restitutionSliderBarValue = 1.0f;
-	bool bodyTypeDropdownBoxEditMode = false;
-	int bodyTypeDropdownBoxActive = 0;
 };
