@@ -1,6 +1,6 @@
 #pragma once
 #include "scene.h"
-#include "raylib.h"
+#include "aabb.h"
 
 struct Body {
 public:
@@ -49,6 +49,8 @@ public:
 
 	void ApplyForce(const Vector2& force, ForceMode forceMode = ForceMode::Force);
 	void ClearForce() { force = { 0, 0 }; }
+
+	AABB GetAABB() const { return AABB{ position, { size * 2, size * 2 } }; }
 public:
 	Vector2 position{ 0, 0 };
 	Vector2 velocity{ 0, 0 };

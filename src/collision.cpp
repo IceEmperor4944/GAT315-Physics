@@ -22,7 +22,7 @@ void CreateContacts(const bodies_t& bodies, contacts_t& contacts) {
 				contact.bodyA = bodyA;
 				contact.bodyB = bodyB;
 
-				Vector2 direction = bodyB->position - bodyA->position;
+				Vector2 direction = bodyA->position - bodyB->position;
 				float distanceSqr = Vector2LengthSqr(direction);
 				if (distanceSqr <= EPSILON) {
 					direction = Vector2{ randf(-0.05f, 0.05f), randf(-0.05f, 0.05f) };

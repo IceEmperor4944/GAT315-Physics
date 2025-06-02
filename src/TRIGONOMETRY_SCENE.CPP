@@ -14,14 +14,14 @@ void TrigonometryScene::FixedUpdate()
 }
 
 //this and next are also in raylib, so not necessary if include raymath.h
-float Vector2Length(const Vector2& v) {
-	return sqrtf((v.x * v.x) + (v.y * v.y));
-}
-
-Vector2 Vector2Normalize(const Vector2& v) {
-	float l = Vector2Length(v);
-	return l == 0 ? Vector2{ 0, 0 } : Vector2{ v.x / l, v.y / l }; //I LOVE TERNARIES RAAAAAAAAAAA
-}
+//float Vector2Length(const Vector2& v) {
+//	return sqrtf((v.x * v.x) + (v.y * v.y));
+//}
+//
+//Vector2 Vector2Normalize(const Vector2& v) {
+//	float l = Vector2Length(v);
+//	return l == 0 ? Vector2{ 0, 0 } : Vector2{ v.x / l, v.y / l }; //I LOVE TERNARIES RAAAAAAAAAAA
+//}
 
 void TrigonometryScene::Draw() {
 	m_camera->BeginMode();

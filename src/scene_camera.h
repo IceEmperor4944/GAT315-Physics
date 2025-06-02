@@ -1,8 +1,8 @@
 #pragma once
-#include "raylib.h"
+#include "aabb.h"
+//#include <raylib.h>
 
-class SceneCamera
-{
+class SceneCamera {
 public:
 	SceneCamera(const Vector2& offset, const Vector2& target = Vector2{ 0, 0 }, float rotation = 0, float size = 5) :
 		m_size{ size }
@@ -29,6 +29,9 @@ public:
 
 	Vector2 ScreenToWorld(const Vector2& screen);
 	Vector2 WorldToScreen(const Vector2& world);
+
+	float GetAspectRatio() const { return (m_camera.offset.x / m_camera.offset.y); }
+	AABB GetAABB() { return AABB{ m_camera.target, { GetAspectRatio() * m_size * 2, m_size * 2 } }; }
 
 private:
 	Camera2D m_camera;

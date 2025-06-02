@@ -529,6 +529,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\resource_dir.h" />
+    <ClInclude Include="..\..\src\aabb.h" />
     <ClInclude Include="..\..\src\body.h" />
     <ClInclude Include="..\..\src\collision.h" />
     <ClInclude Include="..\..\src\contact.h" />

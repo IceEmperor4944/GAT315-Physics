@@ -25,6 +25,6 @@ inline float RadToDeg(float radians) {
 }
 
 inline Vector2 randomOnUnitCircle() {
-	float theta = randf(0, 2 * PI);
+	float theta = randf(0.0f, 2 * PI);
 	return { cosf(theta), sinf(theta) };
 }

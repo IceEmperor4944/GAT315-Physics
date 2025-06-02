@@ -1,5 +1,4 @@
 #pragma once
-#include "raylib.h"
 #include "scene_camera.h"
 #include <string>
 
