@@ -1,11 +1,13 @@
 #pragma once
 #include "body.h"
 #include "spring.h"
+#include "contact.h"
 #include "raylib.h"
 #include <vector>
 
 using bodies_t = std::vector<Body*>;
 using springs_t = std::vector<Spring*>;
+using contacts_t = std::vector<Contact>;
 
 class World {
 public: 
@@ -32,4 +34,5 @@ public:
 private:
 	bodies_t m_bodies;
 	springs_t m_springs;
+	contacts_t m_contacts;
 };

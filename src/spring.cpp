@@ -34,6 +34,32 @@ void Spring::ApplyForce(float kMultiplier) {
 	bodyB->ApplyForce(Vector2Negate(totalForce));
 }
 
+void Spring::ApplyForce(const Vector2& position, Body& body, float restLength, float k) {
+	// Step 1: Calculate direction vector from bodyB to bodyA
+	Vector2 direction = position - body.position;
+	float lengthSquared = Vector2LengthSqr(direction);
+
+	// Avoid division by zero or tiny spring length
+	if (lengthSquared < 0.01) return;
+
+	// Step 2: Calculate spring displacement
+	float length = sqrtf(lengthSquared);
+	float displacement = length - restLength;  // Stretching if > 0, compressed if < 0
+
+	// Step 3: Apply Hooke's Law: F = -k * x
+	float forceMagnitude = -k * displacement;
+
+	// Step 4: Normalize direction and calculate spring force vector
+	Vector2 normalizedDirection = direction / length;
+	Vector2 springForce = normalizedDirection * forceMagnitude;
+
+	// Subtract damping from spring force
+	Vector2 totalForce = springForce;
+
+	// Step 6: Apply equal and opposite forces to the two bodies
+	body.ApplyForce(Vector2Negate(totalForce));
+}
+
 void Spring::Draw(const Scene& scene) {
 	scene.DrawLine(bodyA->position, bodyB->position, 3, WHITE);
 }

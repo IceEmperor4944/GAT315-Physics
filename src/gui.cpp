@@ -6,7 +6,7 @@
 
 void GUI::Initialize()
 {
-	GuiLoadStyle("../raygui/styles/jungle/style_jungle.rgs");
+	//GuiLoadStyle("../raygui/styles/jungle/style_dark.rgs");
 	//GuiLoadStyle("../raygui/styles/terminal/style_terminal.rgs");
 }
 
@@ -22,8 +22,9 @@ void GUI::Draw()
 
 	if (physicsWindowBoxActive)
 	{
-		physicsWindowBoxActive = !GuiWindowBox(Rectangle{ anchor01.x + 0, anchor01.y + 0, 312, 464 }, "Physics");
-		GuiToggle(Rectangle{ anchor01.x + 96, anchor01.y + 424, 120, 24 }, "Simulate", &World::simulate);
+		physicsWindowBoxActive = !GuiWindowBox(Rectangle{ anchor01.x + 0, anchor01.y + 0, 312, 472 }, "Physics");
+		GuiToggle(Rectangle{ anchor01.x + 24, anchor01.y + 432, 120, 24 }, "Simulate", &simulateActive);
+		resetPressed = GuiButton(Rectangle{ anchor01.x + 168, anchor01.y + 432, 120, 24 }, "Reset");
 
 		GuiGroupBox(Rectangle{ anchor02.x + 0, anchor02.y + 0, 256, 184 }, "Body");
 		GuiSliderBar(Rectangle{ anchor02.x + 96, anchor02.y + 16, 120, 16 }, "Mass", GUI_DATA(massValue), 0, 10);
@@ -35,10 +36,12 @@ void GUI::Draw()
 		GuiGroupBox(Rectangle{ anchor03.x + 0, anchor03.y + 8, 256, 72 }, "Spring");
 		GuiSliderBar(Rectangle{ anchor03.x + 96, anchor03.y + 24, 120, 16 }, "Damping", GUI_DATA(springDampingValue), 0, 10);
 		GuiSliderBar(Rectangle{ anchor03.x + 96, anchor03.y + 48, 120, 16 }, "Stiffness", GUI_DATA(stiffnessValue), 0, 20);
-		GuiGroupBox(Rectangle{ anchor04.x + 0, anchor04.y + 0, 256, 72 }, "World");
-		GuiSliderBar(Rectangle{ anchor03.x + 96, anchor03.y + 112, 120, 16 }, "Gravitation", GUI_DATA(World::gravitation), 0, 100);
-		GuiSlider(Rectangle{ anchor04.x + 96, anchor04.y + 40, 120, 16 }, "Gravity", GUI_DATA(World::gravity.y), -20, 20);
+		GuiGroupBox(Rectangle{ anchor04.x + 0, anchor04.y + -8, 264, 96 }, "World");
+		GuiSliderBar(Rectangle{ anchor03.x + 96, anchor03.y + 104, 120, 16 }, "Gravitation", NULL, &gravitationValue, 0, 100);
+		GuiSlider(Rectangle{ anchor04.x + 96, anchor04.y + 56, 120, 16 }, "Gravity", NULL, &gravityValue, 0, 100);
+		GuiSliderBar(Rectangle{ anchor03.x + 96, anchor03.y + 128, 120, 16 }, "Spring Multiplier", NULL, &springSiffnessMultiplierValue, 0, 100);
 		if (GuiDropdownBox(Rectangle{ anchor02.x + 96, anchor02.y + 136, 120, 24 }, "Dynamic;Kinematic;Static", &bodyTypeActive, bodyTypeEditMode)) bodyTypeEditMode = !bodyTypeEditMode;
+
 	}
 
 	GuiUnlock();

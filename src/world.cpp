@@ -1,5 +1,6 @@
 #include "world.h"
 #include "body.h"
+#include "collision.h"
 #include "gui.h"
 #include "gravitation.h"
 
@@ -33,18 +34,31 @@ Spring* World::CreateSpring(Body* bodyA, Body* bodyB, float restLength, float st
     return spring;
 }
 
-void World::Step(float timestep) {
+void World::Step(float timestep)
+{
     if (!simulate) return;
 
     if (gravitation > 0) ApplyGravitation(m_bodies, gravitation);
 
-    for (auto spring : m_springs) {
+    for (auto spring : m_springs)
+    {
         spring->ApplyForce(springStiffnessMultiplier);
     }
 
-    for (auto body : m_bodies) {
+    // body integration
+    for (auto body : m_bodies)
+    {
         body->Step(timestep);
         body->ClearForce();
+    }
+
+    // contact solver
+    for (int i = 0; i < 5; i++)
+    {
+        CreateContacts(m_bodies, m_contacts);
+        SeparateContacts(m_contacts);
+        ResolveContacts(m_contacts);
+        m_contacts.clear();
     }
 }
 
@@ -66,4 +80,8 @@ void World::DestroyAll() {
     for (auto spring : m_springs) {
         delete spring;
     }
+
+    m_bodies.clear();
+    m_springs.clear();
+    m_contacts.clear();
 }

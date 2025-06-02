@@ -1,4 +1,5 @@
 #pragma once
+#include "raylib.h"
 #include <cstdlib>
 #include <algorithm>
 
@@ -21,4 +22,9 @@ inline float DegToRad(float degrees) {
 
 inline float RadToDeg(float radians) {
 	return radians * (180 / PI);
+}
+
+inline Vector2 randomOnUnitCircle() {
+	float theta = randf(0, 2 * PI);
+	return { cosf(theta), sinf(theta) };
 }

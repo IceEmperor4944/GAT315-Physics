@@ -20,6 +20,7 @@ public:
 	{}
 
 	void ApplyForce(float kMultiplier = 1);
+	static void ApplyForce(const Vector2& position, Body& body, float restLength, float k);
 	void Draw(const Scene& scene);
 
 	friend class Scene;
