@@ -22,7 +22,7 @@ A lightweight 2D physics engine written in C++ using the [raylib](https://www.ra
 ### Building the Project
 
 ```bash
-git clone [https://github.com/IceEmperor4944/GAT315-Physics] #to location of choice
+git clone https://github.com/IceEmperor4944/GAT315-Physics #to location of choice
 #open in Visual Studio or another C++ editor
 #Choose the scene to run in main.cpp by changing the scene variable type
 #Run the program
@@ -35,4 +35,4 @@ Space Bar - Pause the scene
 
 Credits
 Developed using raylib
-Inspired by Angry Birds by Rovio
+Slingshot game inspired by Angry Birds by Rovio
