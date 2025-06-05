@@ -29,10 +29,11 @@ git clone https://github.com/IceEmperor4944/GAT315-Physics #to location of choic
 ```
 
 Controls (Demo)
-Left Mouse Button – Click to create a ball, hold to drag the sling back, release to launch the ball
-Right Mouse Button - Click & drag to create blocks to knock down
+
+Left Mouse Button – Click to create a ball
+Left Mouse + Left Control - Click & drag to create blocks to knock down
+Right Mouse Button - Hold to drag the sling back, release to launch the ball
 Space Bar - Pause the scene
 
 Credits
 Developed using raylib
-Slingshot game inspired by Angry Birds by Rovio
