@@ -21,7 +21,8 @@ public:
 
 	//BODY
 	Body* CreateBody(const Vector2& position, float mass, float size, const Color& color);
-	Body* CreateBody(Body::Type type, const Vector2& position, float mass, float size, const Color& color);
+	Body* CreateBody(Body::Type type, Body::Shape shape, const Vector2& position, float mass, float size, const Color& color);
+	//Body* CreateBody(Body::Type type, const Vector2& cornerA, const Vector2& cornerB, float mass, const Color& color);
 	bodies_t& GetBodies() { return m_bodies; }
 
 	//SPRING

@@ -32,7 +32,6 @@ public:
 
 	float GetAspectRatio() const { return (m_camera.offset.x / m_camera.offset.y); }
 	AABB GetAABB() { return AABB{ m_camera.target, { GetAspectRatio() * m_size * 2, m_size * 2 } }; }
-
 private:
 	Camera2D m_camera;
 

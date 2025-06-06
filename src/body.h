@@ -15,6 +15,10 @@ public:
 		Impulse,
 		Velocity
 	};
+	enum class Shape {
+		Circle,
+		Rectangle
+	};
 public:
 	Body() = default;
 	Body(const Vector2& position, const Vector2& velocity, float mass, float size, const Color& color) :
@@ -34,8 +38,9 @@ public:
 	{
 	}
 
-	Body(Type type, const Vector2& position, float mass, float size, const Color& color) :
+	Body(Type type, Shape shape, const Vector2& position, float mass, float size, const Color& color) :
 		type{ type },
+		shape{ shape },
 		position{ position },
 		mass{ mass },
 		size{ size },
@@ -43,6 +48,18 @@ public:
 	{
 		invMass = (type == Type::Dynamic && mass != 0) ? 1 / mass : 0;
 	}
+
+	/*Body(Type type, const Vector2& cornerA, const Vector2& cornerB, float mass, const Color& color) :
+		type{ type },
+		cornerA{ cornerA },
+		cornerB{ cornerB },
+		mass{ mass },
+		color{ color }
+	{
+		invMass = (type == Type::Dynamic && mass != 0) ? 1 / mass : 0;
+		shape = Shape::Rectangle;
+		position = { (cornerA.x + cornerB.x) / 2, (cornerA.y + cornerB.y) / 2 };
+	}*/
 
 	void Step(float dt);
 	void Draw(const Scene& scene);
@@ -57,6 +74,8 @@ public:
 	Vector2 acceleration{ 0, 0 };
 	Vector2 force{ 0, 0 };
 
+	bool hit = false;
+
 	float mass{ 1 };
 	float invMass{ 1 };
 
@@ -68,7 +87,5 @@ public:
 	Color color = WHITE;
 
 	Type type = Type::Dynamic;
-
-	Body* next{ nullptr };
-	Body* prev{ nullptr };
+	Shape shape = Shape::Circle;
 };

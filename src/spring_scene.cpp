@@ -29,7 +29,7 @@ void SpringScene::Update() {
 			std::cout << GUI::bodyTypeActive << std::endl;
 
 			Color c = ColorFromHSV(randf(360), 1, 1);
-			Body* body = m_world->CreateBody(type, position, GUI::massValue, GUI::sizeValue, c);
+			Body* body = m_world->CreateBody(type, Body::Shape::Circle, position, GUI::massValue, GUI::sizeValue, c);
 			body->gravityScale = GUI::gravityScaleValue;
 			body->restitution = GUI::restitutionValue;
 			body->damping = GUI::dampingValue;
@@ -56,7 +56,7 @@ void SpringScene::Update() {
 			else {
 				if (m_selectedBody && m_connectBody) {
 					float distance = Vector2Distance(m_selectedBody->position, m_connectBody->position);
-					m_world->CreateSpring(m_selectedBody, m_connectBody, distance, 20, 0.0f);
+					m_world->CreateSpring(m_selectedBody, m_connectBody, distance, GUI::stiffnessValue, GUI::springDampingValue);
 				}
 				m_selectedBody = nullptr;
 				m_connectBody = nullptr;

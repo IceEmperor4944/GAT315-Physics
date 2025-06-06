@@ -1,11 +1,12 @@
 #pragma once
 #include "scene.h"
+#include "body.h"
 #include "raylib.h"
 
 struct Spring {
 public:
-	struct Body* bodyA;
-	struct Body* bodyB;
+	Body* bodyA;
+	Body* bodyB;
 	float restLength;
 	float k; // stiffness
 	float damping;
@@ -20,7 +21,7 @@ public:
 	{}
 
 	void ApplyForce(float kMultiplier = 1);
-	static void ApplyForce(const Vector2& position, Body& body, float restLength, float k);
+	static void ApplyForce(const Vector2& position, Body& body, float restLength, float k, Body::ForceMode mode = Body::ForceMode::Force);
 	void Draw(const Scene& scene);
 
 	friend class Scene;

@@ -34,7 +34,7 @@ void Spring::ApplyForce(float kMultiplier) {
 	bodyB->ApplyForce(Vector2Negate(totalForce));
 }
 
-void Spring::ApplyForce(const Vector2& position, Body& body, float restLength, float k) {
+void Spring::ApplyForce(const Vector2& position, Body& body, float restLength, float k, Body::ForceMode mode) {
 	// Step 1: Calculate direction vector from bodyB to bodyA
 	Vector2 direction = position - body.position;
 	float lengthSquared = Vector2LengthSqr(direction);
@@ -57,7 +57,7 @@ void Spring::ApplyForce(const Vector2& position, Body& body, float restLength, f
 	Vector2 totalForce = springForce;
 
 	// Step 6: Apply equal and opposite forces to the two bodies
-	body.ApplyForce(Vector2Negate(totalForce));
+	body.ApplyForce(Vector2Negate(totalForce), mode);
 }
 
 void Spring::Draw(const Scene& scene) {

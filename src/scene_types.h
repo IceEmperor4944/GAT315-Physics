@@ -4,3 +4,4 @@
 #include "vector_scene.h"
 #include "polar_scene.h"
 #include "spring_scene.h"
+#include "slingshot_scene.h"

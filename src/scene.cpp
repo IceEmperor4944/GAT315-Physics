@@ -56,3 +56,7 @@ void Scene::DrawCircleLine(const Vector2& world, float radius, const Color& colo
 void Scene::DrawLine(const Vector2& v1, const Vector2& v2, float thickness, const Color& color) const {
 	DrawLineEx(m_camera->WorldToScreen(v1), m_camera->WorldToScreen(v2), thickness, color);
 }
+
+void Scene::DrawRectangles(const Vector2& world, const Vector2& size, const Color& color) const {
+	DrawRectangleV(m_camera->WorldToScreen(world), m_camera->WorldToScreen(size), color);
+}

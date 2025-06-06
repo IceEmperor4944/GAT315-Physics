@@ -7,6 +7,7 @@ public:
 	static void Initialize();
 	static void Update();
 	static void Draw();
+	static void DrawGame();
 
 	static struct Body* GetBodyIntersect(const Vector2& position, bodies_t& bodies, const SceneCamera& camera);
 public:
@@ -16,12 +17,13 @@ public:
 	inline static Vector2 anchor02 = { 96, 88 };
 	inline static Vector2 anchor03 = { 96, 288 };
 	inline static Vector2 anchor04 = { 96, 384 };
+	inline static Vector2 anchor05 = { 540, 270 };
 	
 	inline static bool physicsWindowBoxActive = true;
 	
 	inline static float massValue = 1.0f;
 	inline static float sizeValue = 0.1f;
-	inline static float gravityScaleValue = 1.0f;
+	inline static float gravityScaleValue = 5.0f;
 	inline static float dampingValue = 0.0f;
 	inline static float restitutionValue = 1.0f;
 	inline static bool bodyTypeEditMode = false;
@@ -33,4 +35,14 @@ public:
 	inline static bool simulateActive = true;
 	inline static float springSiffnessMultiplierValue = 0.0f;
 	inline static bool resetPressed = false;
+
+	inline static int scoreVal = 0;
+	inline static int* score = &scoreVal;
+	inline static int maxScore = 0;
+	inline static int ballsNum = 3;
+	inline static int* ballsLeft = &ballsNum;
+	inline static int maxBalls = 3;
+
+	inline static bool hasWon = false;
+	inline static bool hasLost = false;
 };

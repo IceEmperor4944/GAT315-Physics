@@ -31,6 +31,7 @@ protected:
 	void DrawCircle(const Vector2& world, float radius, const Color& color) const;
 	void DrawCircleLine(const Vector2& world, float radius, const Color& color, int pixels = 0) const;
 	void DrawLine(const Vector2& v1, const Vector2& v2, float thickness, const Color& color) const;
+	void DrawRectangles(const Vector2& world, const Vector2& size, const Color& color) const;
 protected:
 	int m_width{ 0 };
 	int m_height{ 0 };

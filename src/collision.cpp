@@ -7,6 +7,19 @@ bool Intersects(Body* bodyA, Body* bodyB) {
 	float distance = Vector2Distance(bodyA->position, bodyB->position);
 	float radius = bodyA->size + bodyB->size;
 
+	if (bodyA->shape == Body::Shape::Rectangle && bodyB->shape == Body::Shape::Rectangle) {
+		float distanceX = bodyA->position.x - bodyB->position.x;
+		float distanceY = bodyB->position.y - bodyA->position.y;
+
+		float overlapX = radius - fabs(distanceX);
+		float overlapY = radius - fabs(distanceY);
+
+		return (overlapX > 0 && overlapY > 0);
+	}
+
+	if (bodyA->shape == Body::Shape::Circle && bodyB->shape == Body::Shape::Rectangle) bodyA->hit, bodyB->hit = true;
+	if (bodyB->shape == Body::Shape::Circle && bodyA->shape == Body::Shape::Rectangle) bodyA->hit, bodyB->hit = true;
+
 	return (distance <= radius);
 }
 

@@ -20,12 +20,19 @@ Body* World::CreateBody(const Vector2& position, float mass, float size, const C
     return body;
 }
 
-Body* World::CreateBody(Body::Type type, const Vector2& position, float mass, float size, const Color& color) {
-    Body* body = new Body(type, position, mass, size, color);
+Body* World::CreateBody(Body::Type type, Body::Shape shape, const Vector2& position, float mass, float size, const Color& color) {
+    Body* body = new Body(type, shape, position, mass, size, color);
     m_bodies.push_back(body);
 
     return body;
 }
+
+//Body* World::CreateBody(Body::Type type, const Vector2& cornerA, const Vector2& cornerB, float mass, const Color& color) {
+//    Body* body = new Body(type, cornerA, cornerB, mass, color);
+//    m_bodies.push_back(body);
+//
+//    return body;
+//}
 
 Spring* World::CreateSpring(Body* bodyA, Body* bodyB, float restLength, float stiffness, float damping) {
     Spring* spring = new Spring(bodyA, bodyB, restLength, stiffness, damping);

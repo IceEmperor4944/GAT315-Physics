@@ -24,7 +24,7 @@ int main() {
 	// Load a texture from the resources directory
 	Texture wabbit = LoadTexture("wabbit_alpha.png");
 
-	Scene* scene = new SpringScene("spring", 1280, 720);
+	Scene* scene = new SlingshotScene("Physics", 1280, 720);
 	scene->Initialize();
 
 	SetTargetFPS(180);

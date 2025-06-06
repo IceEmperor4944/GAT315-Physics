@@ -543,6 +543,7 @@
     <ClInclude Include="..\..\src\scene.h" />
     <ClInclude Include="..\..\src\scene_camera.h" />
     <ClInclude Include="..\..\src\scene_types.h" />
+    <ClInclude Include="..\..\src\slingshot_scene.h" />
     <ClInclude Include="..\..\src\spring.h" />
     <ClInclude Include="..\..\src\spring_scene.h" />
     <ClInclude Include="..\..\src\trigonometry_scene.h" />
@@ -558,6 +559,7 @@
     <ClCompile Include="..\..\src\polar_scene.cpp" />
     <ClCompile Include="..\..\src\scene.cpp" />
     <ClCompile Include="..\..\src\scene_camera.cpp" />
+    <ClCompile Include="..\..\src\slingshot_scene.cpp" />
     <ClCompile Include="..\..\src\spring.cpp" />
     <ClCompile Include="..\..\src\spring_scene.cpp" />
     <ClCompile Include="..\..\src\trigonometry_scene.cpp" />
